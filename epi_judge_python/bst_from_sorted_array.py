@@ -13,17 +13,16 @@ def build_min_height_bst_from_sorted_array(A: List[int]) -> Optional[BstNode]:
     # TODO - you fill in here.
     
     def buildMinHeight(start,end):
-        if end<=start:
+        if end<start:
             return None
         mid= (start+end)//2 
         
         lnode=buildMinHeight(start,mid-1)
-        rnode=buildMinHeight(end,mid+1)
+        rnode=buildMinHeight(mid+1,end)
         newNode = BstNode(A[mid],lnode,rnode);
         return newNode
     
     v=buildMinHeight(0,len(A)-1)
-    print(v)
     return v
 
 @enable_executor_hook
