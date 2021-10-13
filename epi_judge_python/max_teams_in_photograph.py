@@ -3,7 +3,7 @@ from typing import List
 
 from test_framework import generic_test
 from test_framework.test_utils import enable_executor_hook
-
+# wtf is going on here
 
 class GraphVertex:
     def __init__(self) -> None:
@@ -14,7 +14,27 @@ class GraphVertex:
 
 def find_largest_number_teams(graph: List[GraphVertex]) -> int:
     # TODO - you fill in here.
-    return 0
+    def topSort(g):
+        path=[]
+        def dfs(currNode):
+            path.append(currNode)
+            for vert in currNode.edges:
+                if vert.max_distance==0:
+                    vert.max_distance=1
+                    
+                    dfs(vert)
+        for node in g:
+            if node.max_distance==0:
+                dfs(node)
+        return path
+
+    path=topSort(graph)
+    
+
+    for i,v in enumerate(path):
+        
+
+    return 
 
 
 @enable_executor_hook

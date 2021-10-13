@@ -12,8 +12,24 @@ class GraphVertex:
 
 
 def clone_graph(graph: GraphVertex) -> GraphVertex:
-    # TODO - you fill in here.
-    return GraphVertex(0)
+
+    def clone_rec(node, visited):
+        newNode = GraphVertex(node.label)
+        visited[node.label] = newNode
+
+        for vert in node.edges:
+            if vert.label not in visited:
+
+                newNode.edges.append(
+                    clone_rec(vert, visited)
+                )
+            else:
+                newNode.edges.append(visited[vert.label])
+        return newNode
+
+    visited = collections.defaultdict(list)
+
+    return clone_rec(graph, visited)
 
 
 def copy_labels(edges):

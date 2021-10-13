@@ -11,7 +11,20 @@ from test_framework.test_utils import enable_executor_hook
 # Input nodes are nonempty and the key at s is less than or equal to that at b.
 def find_lca(tree: BstNode, s: BstNode, b: BstNode) -> Optional[BstNode]:
     # TODO - you fill in here.
-    return None
+    currNode=tree
+    largerThanBoth=lambda currNode : currNode.data > s.data and currNode.data > b.data
+    lessThanBoth=lambda currNode : currNode.data < s.data and currNode.data < b.data
+    while lessThanBoth(currNode) or largerThanBoth(currNode):
+
+        while currNode.left and largerThanBoth(currNode):
+            currNode=currNode.left
+        
+        while currNode.right and lessThanBoth(currNode):
+            currNode=currNode.right
+    
+    
+    
+    return currNode
 
 
 @enable_executor_hook

@@ -13,6 +13,26 @@ class GraphVertex:
 
 def is_any_placement_feasible(graph: List[GraphVertex]) -> bool:
     # TODO - you fill in here.
+    # i am pretty sure this is asking if the input graph is bipartite
+
+    def is_bipart(node, color):
+        node.d = color
+
+        for vert in node.edges:
+            if vert.d == -1:
+                if not is_bipart(vert, abs(color-1)):
+                    return False
+            else:
+                if vert.d == abs(color-1):
+                    continue
+                else:
+                    return False
+        return True
+
+    for vert in graph:
+        if vert.d==-1 and not is_bipart(vert, 0):
+            return False
+
     return True
 
 

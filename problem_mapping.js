@@ -65,7 +65,7 @@ problem_mapping = {
                 "passed": 0,
                 "total": 10000
             },
-            "Python: closest_int_same_weight.py": { 
+            "Python: closest_int_same_weight.py": {
                 "passed": 0,
                 "total": 10000
             }
@@ -1002,7 +1002,7 @@ problem_mapping = {
     "Chapter 09: Binary Trees": {
         "9.01 Test if a binary tree is height-balanced": {
             "C++: is_tree_balanced.cc": {
-                "passed": 0,
+                "passed": 3852,
                 "total": 3852
             },
             "Java: IsTreeBalanced.java": {
@@ -1010,13 +1010,13 @@ problem_mapping = {
                 "total": 3852
             },
             "Python: is_tree_balanced.py": {
-                "passed": 0,
+                "passed": 3852,
                 "total": 3852
             }
         },
         "9.02 Test if a binary tree is symmetric": {
             "C++: is_tree_symmetric.cc": {
-                "passed": 0,
+                "passed": 3852,
                 "total": 3852
             },
             "Java: IsTreeSymmetric.java": {
@@ -1024,13 +1024,13 @@ problem_mapping = {
                 "total": 3852
             },
             "Python: is_tree_symmetric.py": {
-                "passed": 0,
+                "passed": 3852,
                 "total": 3852
             }
         },
         "9.03 Compute the lowest common ancestor in a binary tree": {
             "C++: lowest_common_ancestor.cc": {
-                "passed": 0,
+                "passed": 948,
                 "total": 948
             },
             "Java: LowestCommonAncestor.java": {
@@ -1038,7 +1038,7 @@ problem_mapping = {
                 "total": 948
             },
             "Python: lowest_common_ancestor.py": {
-                "passed": 0,
+                "passed": 948,
                 "total": 948
             }
         },
@@ -1052,7 +1052,7 @@ problem_mapping = {
                 "total": 948
             },
             "Python: lowest_common_ancestor_with_parent.py": {
-                "passed": 0,
+                "passed": 948,
                 "total": 948
             }
         },
@@ -1066,7 +1066,7 @@ problem_mapping = {
                 "total": 3849
             },
             "Python: sum_root_to_leaf.py": {
-                "passed": 0,
+                "passed": 3849,
                 "total": 3849
             }
         },
@@ -1080,7 +1080,7 @@ problem_mapping = {
                 "total": 7690
             },
             "Python: path_sum.py": {
-                "passed": 0,
+                "passed": 7690,
                 "total": 7690
             }
         },
@@ -1094,7 +1094,7 @@ problem_mapping = {
                 "total": 3852
             },
             "Python: tree_inorder.py": {
-                "passed": 0,
+                "passed": 3852,
                 "total": 3852
             }
         },
@@ -1108,7 +1108,7 @@ problem_mapping = {
                 "total": 3851
             },
             "Python: kth_node_in_tree.py": {
-                "passed": 0,
+                "passed": 3851,
                 "total": 3851
             }
         },
@@ -1122,7 +1122,7 @@ problem_mapping = {
                 "total": 948
             },
             "Python: successor_in_tree.py": {
-                "passed": 0,
+                "passed": 948,
                 "total": 948
             }
         },
@@ -1150,7 +1150,7 @@ problem_mapping = {
                 "total": 3852
             },
             "Python: tree_from_preorder_inorder.py": {
-                "passed": 0,
+                "passed": 3852,
                 "total": 3852
             }
         },
@@ -1164,7 +1164,7 @@ problem_mapping = {
                 "total": 3852
             },
             "Python: tree_from_preorder_with_null.py": {
-                "passed": 0,
+                "passed": 3852,
                 "total": 3852
             }
         },
@@ -1178,7 +1178,7 @@ problem_mapping = {
                 "total": 3852
             },
             "Python: tree_connect_leaves.py": {
-                "passed": 0,
+                "passed": 3852,
                 "total": 3852
             }
         },
@@ -1192,7 +1192,7 @@ problem_mapping = {
                 "total": 3852
             },
             "Python: tree_exterior.py": {
-                "passed": 0,
+                "passed": 3,
                 "total": 3852
             }
         },
@@ -1796,7 +1796,7 @@ problem_mapping = {
         },
         "14.01 Test if a binary tree satisfies the BST property": {
             "C++: is_tree_a_bst.cc": {
-                "passed": 0,
+                "passed": 3139,
                 "total": 3139
             },
             "Java: IsTreeABst.java": {
@@ -1804,13 +1804,13 @@ problem_mapping = {
                 "total": 3139
             },
             "Python: is_tree_a_bst.py": {
-                "passed": 0,
+                "passed": 3139,
                 "total": 3139
             }
         },
         "14.02 Find the first key greater than a given value in a BST": {
             "C++: search_first_greater_value_in_bst.cc": {
-                "passed": 0,
+                "passed": 949,
                 "total": 949
             },
             "Java: SearchFirstGreaterValueInBst.java": {
@@ -1818,13 +1818,13 @@ problem_mapping = {
                 "total": 949
             },
             "Python: search_first_greater_value_in_bst.py": {
-                "passed": 0,
+                "passed": 949,
                 "total": 949
             }
         },
         "14.03 Find the k largest elements in a BST": {
             "C++: k_largest_values_in_bst.cc": {
-                "passed": 0,
+                "passed": 949,
                 "total": 949
             },
             "Java: KLargestValuesInBst.java": {
@@ -1832,13 +1832,13 @@ problem_mapping = {
                 "total": 949
             },
             "Python: k_largest_values_in_bst.py": {
-                "passed": 0,
+                "passed": 949,
                 "total": 949
             }
         },
         "14.04 Compute the LCA in a BST": {
             "C++: lowest_common_ancestor_in_bst.cc": {
-                "passed": 0,
+                "passed": 951,
                 "total": 951
             },
             "Java: LowestCommonAncestorInBst.java": {
@@ -1846,7 +1846,7 @@ problem_mapping = {
                 "total": 951
             },
             "Python: lowest_common_ancestor_in_bst.py": {
-                "passed": 0,
+                "passed": 951,
                 "total": 951
             }
         },
@@ -1860,7 +1860,7 @@ problem_mapping = {
                 "total": 950
             },
             "Python: bst_from_preorder.py": {
-                "passed": 0,
+                "passed": 950,
                 "total": 950
             }
         },
@@ -2466,7 +2466,7 @@ problem_mapping = {
                 "total": 101
             },
             "Python: search_maze.py": {
-                "passed": 0,
+                "passed": 101,
                 "total": 101
             }
         },
@@ -2494,7 +2494,7 @@ problem_mapping = {
                 "total": 51
             },
             "Python: matrix_enclosed_regions.py": {
-                "passed": 0,
+                "passed": 51,
                 "total": 51
             }
         },
@@ -2508,7 +2508,7 @@ problem_mapping = {
                 "total": 71
             },
             "Python: deadlock_detection.py": {
-                "passed": 0,
+                "passed": 71,
                 "total": 71
             }
         },
@@ -2522,7 +2522,7 @@ problem_mapping = {
                 "total": 91
             },
             "Python: graph_clone.py": {
-                "passed": 0,
+                "passed": 91,
                 "total": 91
             }
         },
@@ -2536,7 +2536,7 @@ problem_mapping = {
                 "total": 85
             },
             "Python: is_circuit_wirable.py": {
-                "passed": 0,
+                "passed": 85,
                 "total": 85
             }
         },
@@ -2550,7 +2550,7 @@ problem_mapping = {
                 "total": 48
             },
             "Python: string_transformability.py": {
-                "passed": 0,
+                "passed": 48,
                 "total": 48
             }
         },

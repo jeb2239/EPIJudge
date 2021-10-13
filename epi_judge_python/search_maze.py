@@ -11,11 +11,36 @@ WHITE, BLACK = range(2)
 
 Coordinate = collections.namedtuple('Coordinate', ('x', 'y'))
 
+directions = [(1, 0), (0, 1), (-1, 0), (0, -1)]
+
 
 def search_maze(maze: List[List[int]], s: Coordinate,
                 e: Coordinate) -> List[Coordinate]:
-    # TODO - you fill in here.
-    return []
+    nrows = len(maze)
+    ncols = len(maze[0])
+    result=[]
+    def search_maze(currNode):
+        (x, y) = currNode
+        maze[x][y] = BLACK
+        result.append(currNode)
+
+        if e[0] == currNode[0] and e[1] == currNode[1]:
+            return True
+        
+
+        for d in directions:
+            newx = d[0]+x
+            newy = d[1]+y
+            
+            inbounds = (0 <= newx < nrows and 0 <= newy < ncols)
+            if inbounds and maze[newx][newy] == WHITE:
+                if search_maze(Coordinate(newx, newy)):
+                    return True
+        result.pop()
+        return False
+        
+    search_maze(s)
+    return result
 
 
 def path_element_is_feasible(maze, prev, cur):
@@ -23,9 +48,9 @@ def path_element_is_feasible(maze, prev, cur):
             (0 <= cur.y < len(maze[cur.x])) and maze[cur.x][cur.y] == WHITE):
         return False
     return cur == (prev.x + 1, prev.y) or \
-           cur == (prev.x - 1, prev.y) or \
-           cur == (prev.x, prev.y + 1) or \
-           cur == (prev.x, prev.y - 1)
+        cur == (prev.x - 1, prev.y) or \
+        cur == (prev.x, prev.y + 1) or \
+        cur == (prev.x, prev.y - 1)
 
 
 @enable_executor_hook
