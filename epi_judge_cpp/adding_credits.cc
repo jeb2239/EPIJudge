@@ -1,26 +1,47 @@
 #include <string>
-
+#include <memory>
+#include <map>
+#include <unordered_map>
+#include <set>
 #include "test_framework/fmt_print.h"
 #include "test_framework/generic_test.h"
 #include "test_framework/test_failure.h"
 using std::string;
+using namespace std;
 
 class ClientsCreditsInfo {
- public:
+  // you can set this up like an order book where the keys of the bst are ordered
+  map<int,set<string>> ;
+  unordered_map<string,int> nameToCreds;
+  public:
   void Insert(const string& client_id, int c) {
     // TODO - you fill in here.
+    auto entryToAdd = make_shared<Entry>(client_id,c);
+    entryTree.insert(entryToAdd);
+    entryMap[client_id]=entryToAdd;
+    
     return;
   }
   bool Remove(const string& client_id) {
     // TODO - you fill in here.
+
+    auto valueItr = entryMap.find(client_id);
+    if (valueItr!=entryMap.cend()){
+      
+      entryMap.erase(client_id);
+      entryTree.erase(client_id);
+      
+    }
+
     return true;
   }
   int Lookup(const string& client_id) const {
     // TODO - you fill in here.
-    return 0;
+    auto val = entryMap.find(client_id);
+    return val->second->credit;
   }
   void AddAll(int C) {
-    // TODO - you fill in here.
+    for(auto p : entryMap){}
     return;
   }
   string Max() const {

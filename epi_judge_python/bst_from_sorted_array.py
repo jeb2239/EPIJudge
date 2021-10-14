@@ -13,6 +13,8 @@ def build_min_height_bst_from_sorted_array(A: List[int]) -> Optional[BstNode]:
     # TODO - you fill in here.
     
     def buildMinHeight(start,end):
+        # start and end can be equal because out end index-1
+        # this was a silly mistake i made
         if end<start:
             return None
         mid= (start+end)//2 
