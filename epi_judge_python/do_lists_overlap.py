@@ -6,10 +6,44 @@ from test_framework import generic_test
 from test_framework.test_failure import TestFailure
 from test_framework.test_utils import enable_executor_hook
 
+def listLen(l:ListNode):
+    currNode=l
+    count=0
+    while currNode:
+        count+=1
+        currNode=currNode.next
+    
+    return count
+    
 
 def overlapping_lists(l0: ListNode, l1: ListNode) -> Optional[ListNode]:
-    # TODO - you fill in here.
-    return None
+    # first see which list is longer
+    if l0 is None:
+        return None
+    if l1 is None:
+        return None
+    biggerList=None
+    smallerList=None
+    val=listLen(l0)-listLen(l1)
+    if val<0:
+        biggerList=l0
+        smallerList=l1
+    else:
+        biggerList=l1
+        smallerList=l0
+    diff=abs(val)
+    while diff:
+        biggerList=biggerList.next
+        diff-=1
+    
+    while biggerList is not smallerList:
+        biggerList=biggerList.next
+        smallerList=smallerList.next
+    
+
+
+
+    return biggerList
 
 
 @enable_executor_hook
