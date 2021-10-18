@@ -8,25 +8,33 @@ from test_framework.test_utils import enable_executor_hook
 
 
 def exterior_binary_tree(tree: BinaryTreeNode) -> List[BinaryTreeNode]:
+    if tree is None:
+        return []
+    if tree.left is None and tree.right is None:
+        return [tree]
     currNode = tree.left
     leftSide = []
-    leftSide.append(tree)
-
     while currNode:
-        leftSide.append(currNode)
-        if currNode.left:
-            currNode = currNode.left
+        if currNode.right is None and currNode.left is None:
+            break
         else:
-            currNode = currNode.right
+            leftSide.append(currNode)
+            if currNode.left:
+                currNode = currNode.left
+            else:
+                currNode = currNode.right
 
     currNode = tree.right
     rightSide = []
     while currNode:
-        rightSide.append(currNode)
-        if currNode.right:
-            currNode = currNode.right
+        if currNode.right is None and currNode.left is None:
+            break
         else:
-            currNode = currNode.left
+            rightSide.append(currNode)
+            if currNode.right:
+                currNode = currNode.right
+            else:
+                currNode = currNode.left
 
     leaves = []
 
@@ -45,9 +53,7 @@ def exterior_binary_tree(tree: BinaryTreeNode) -> List[BinaryTreeNode]:
 
     rightSide.reverse()
     # rightSide.pop()
-    if len(leaves)==1:
-        return leftSide+leaves+rightSide
-    return leftSide+leaves[1:len(leaves)-1]+rightSide
+    return [tree]+leftSide+leaves+rightSide
 
 
 def create_output_list(L):

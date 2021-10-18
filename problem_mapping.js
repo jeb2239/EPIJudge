@@ -1192,7 +1192,7 @@ problem_mapping = {
                 "total": 3852
             },
             "Python: tree_exterior.py": {
-                "passed": 3,
+                "passed": 3852,
                 "total": 3852
             }
         },
