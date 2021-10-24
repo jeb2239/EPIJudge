@@ -1,3 +1,5 @@
+from is_list_cyclic import has_cycle
+from do_terminated_lists_overlap import overlapping_no_cycle_lists
 import functools
 from typing import Optional
 
@@ -6,17 +8,17 @@ from test_framework import generic_test
 from test_framework.test_failure import TestFailure
 from test_framework.test_utils import enable_executor_hook
 
-def listLen(l:ListNode):
-    currNode=l
-    count=0
+
+def listLen(l: ListNode):
+    currNode = l
+    count = 0
     while currNode:
-        count+=1
-        currNode=currNode.next
-    
+        count += 1
+        currNode = currNode.next
+
     return count
 
-from is_list_cyclic import has_cycle
-from do_terminated_lists_overlap import overlapping_no_cycle_lists
+
 def overlapping_lists(l0: ListNode, l1: ListNode) -> Optional[ListNode]:
     """
     Should have read directions more carefully
@@ -26,14 +28,15 @@ def overlapping_lists(l0: ListNode, l1: ListNode) -> Optional[ListNode]:
     if l1 is None:
         return None
 
-    cycleStart1=has_cycle(l0)
-    cycleStart2=has_cycle(l1)
+    cycleStart1 = has_cycle(l0)
+    cycleStart2 = has_cycle(l1)
     if cycleStart1 is None and cycleStart2 is None:
-        return overlapping_no_cycle_lists(l0,l1)
+        return overlapping_no_cycle_lists(l0, l1)
     
     
 
     return None
+
 
 @enable_executor_hook
 def overlapping_lists_wrapper(executor, l0, l1, common, cycle0, cycle1):
