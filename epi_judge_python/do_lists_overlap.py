@@ -14,37 +14,26 @@ def listLen(l:ListNode):
         currNode=currNode.next
     
     return count
-    
 
+from is_list_cyclic import has_cycle
+from do_terminated_lists_overlap import overlapping_no_cycle_lists
 def overlapping_lists(l0: ListNode, l1: ListNode) -> Optional[ListNode]:
-    # first see which list is longer
+    """
+    Should have read directions more carefully
+    """
     if l0 is None:
         return None
     if l1 is None:
         return None
-    biggerList=None
-    smallerList=None
-    val=listLen(l0)-listLen(l1)
-    if val<0:
-        biggerList=l0
-        smallerList=l1
-    else:
-        biggerList=l1
-        smallerList=l0
-    diff=abs(val)
-    while diff:
-        biggerList=biggerList.next
-        diff-=1
+
+    cycleStart1=has_cycle(l0)
+    cycleStart2=has_cycle(l1)
+    if cycleStart1 is None and cycleStart2 is None:
+        return overlapping_no_cycle_lists(l0,l1)
     
-    while biggerList is not smallerList:
-        biggerList=biggerList.next
-        smallerList=smallerList.next
-        
+    
 
-
-
-    return biggerList
-
+    return None
 
 @enable_executor_hook
 def overlapping_lists_wrapper(executor, l0, l1, common, cycle0, cycle1):

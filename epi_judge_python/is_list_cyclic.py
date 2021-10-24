@@ -41,10 +41,10 @@ def has_cycle(head: ListNode) -> Optional[ListNode]:
     # startCycle + k = idxWeStopAt
     # if i know the size of the cycle what if I keep a node exactly cycle size slots ahead of my current node
     # 
+    
 
     currNode=fastNode.next
     count=0 # amount of nodes
-    print("he")
     while currNode and currNode is not fastNode:
         count+=1
         currNode=currNode.next
