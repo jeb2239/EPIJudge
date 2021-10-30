@@ -13,10 +13,27 @@ class BinaryTreeNode:
         self.right = right
         self.size = size
 
+# # of nodes in subtree rooted at this node
+
 
 def find_kth_node_binary_tree(tree: BinaryTreeNode,
                               k: int) -> Optional[BinaryTreeNode]:
     # TODO - you fill in here.
+    # eliminate need for backtracking
+    # if left size+1 > k
+
+    while tree:
+
+        left_size = tree.left.size if tree.left else 0
+
+        if left_size+1 < k:
+            k -= (left_size+1)
+            tree = tree.right  # go right
+        elif left_size+1 == k:
+            return tree
+        else:
+            tree = tree.left
+
     return None
 
 

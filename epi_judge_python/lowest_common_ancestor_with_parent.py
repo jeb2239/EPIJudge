@@ -10,8 +10,36 @@ from test_framework.test_utils import enable_executor_hook
 
 def lca(node0: BinaryTreeNode,
         node1: BinaryTreeNode) -> Optional[BinaryTreeNode]:
-    # TODO - you fill in here.
-    return None
+    # Find distance
+    # of each node from the root
+    """
+    this did not go well lazy mind about it
+    be less lazy about checking...
+    """
+    
+    def findDepth(node):
+        if node is None:
+            return 0
+        cnt = 0
+        while node:
+            node = node.parent
+            cnt+=1
+        return cnt
+
+    cnt0 = findDepth(node0)
+    cnt1 = findDepth(node1)
+    diff = abs(cnt0-cnt1)
+    if cnt0 < cnt1:
+        node0, node1 = node1, node0  # node 0 is the furthest
+
+    while diff:
+        node0 = node0.parent
+        diff -= 1
+
+    while node0 is not node1:
+        node0, node1 = node0.parent, node1.parent
+    
+    return node0
 
 
 @enable_executor_hook

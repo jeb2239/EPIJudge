@@ -8,8 +8,63 @@ from test_framework.test_utils import enable_executor_hook
 
 
 def has_cycle(head: ListNode) -> Optional[ListNode]:
-    # TODO - you fill in here.
-    return None
+    """
+    have two nodes a slow node and a fast node
+    fastNode moves twice as fast 
+    if the list has an end the fast node should reach it before the slow node
+    if it doesn't have an end then the fast node should lap the slow node inside the cycle
+
+    once i have figured out the overlap - i need to find first node of cycle
+    need to find size of cycle hold one node steady and count around until you see that node again
+    this will give you the size of the cycle
+
+    cycle_sz=N
+    you will then need
+    
+    
+    """
+    if head is None:
+        return None
+    dummyNode=ListNode(-1)
+    dummyNode.next=head
+    currNode=dummyNode.next
+    # one mistake here was starting the fast pointer at the same spot as currNode, should be started one slot over
+    fastNode=dummyNode.next.next # i was missing the additional next 
+    while fastNode and fastNode.next and fastNode is not currNode:
+        currNode=currNode.next
+        fastNode=fastNode.next.next
+        
+    if fastNode is not currNode:
+        return None
+    # otherwise we know for a fact there is a loop
+    # now must find the start + size of that loop
+    # startCycle + k = idxWeStopAt
+    # if i know the size of the cycle what if I keep a node exactly cycle size slots ahead of my current node
+    # 
+    
+
+    currNode=fastNode.next
+    count=0 # amount of nodes
+    while currNode and currNode is not fastNode:
+        count+=1
+        currNode=currNode.next
+    count+=1
+    if currNode is None:
+        return None
+    
+    fastNode=dummyNode.next
+    # fastNode is idx into m + k = cycle_size, 
+    while count:
+        fastNode=fastNode.next
+        count-=1
+    
+    currNode=dummyNode.next
+    while currNode is not fastNode:
+        currNode=currNode.next
+        fastNode=fastNode.next
+
+    
+    return currNode
 
 
 @enable_executor_hook

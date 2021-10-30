@@ -6,7 +6,16 @@
 
 BinaryTreeNode<int>* Lca(const unique_ptr<BinaryTreeNode<int>>& node0,
                          const unique_ptr<BinaryTreeNode<int>>& node1) {
-  // TODO - you fill in here.
+ /*
+  find distance from root
+
+  */
+
+  int node0Dist=0;
+  int node1Dist=0;
+  auto& currNode=node0; // needs to be an auto reference b/c unique ptr
+  
+
   return nullptr;
 }
 int LcaWrapper(TimedExecutor& executor,

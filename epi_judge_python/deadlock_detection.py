@@ -4,15 +4,33 @@ from typing import List
 from test_framework import generic_test
 from test_framework.test_utils import enable_executor_hook
 
+from collections import defaultdict
+
 
 class GraphVertex:
     def __init__(self) -> None:
+        self.color = 0
         self.edges: List['GraphVertex'] = []
 
 
 def is_deadlocked(graph: List[GraphVertex]) -> bool:
-    # TODO - you fill in here.
-    return True
+    def hasCycle(node):
+        node.color = 1
+        for vert in node.edges:
+            if vert.color == 0:
+                if hasCycle(vert):
+                    return True
+            if vert.color == 1:
+                return True
+
+        node.color = 2
+        return False
+
+    for vert in graph:
+        if vert.color == 0:
+            if hasCycle(vert):
+                return True
+    return False
 
 
 @enable_executor_hook
